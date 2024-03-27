@@ -1,0 +1,356 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;1,100&family=Mr+Dafoe&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primary:#ff0000;
+}
+
+body{
+    position: relative;
+    background: #000000;
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* HEADER */
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 100px;
+    z-index: 1000;
+}
+
+.logo{
+    font-size: 30px;
+    color: #ffffff;
+    letter-spacing: 2px;
+    font-weight: 800;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.header-right{
+    display: flex;
+    align-items: center;
+}
+
+.menu{
+    color: #ffffff;
+    font-size: 2rem;
+    transition: 0.5s;
+}
+
+.menu-active{
+    transform: rotateY(180deg);
+}
+
+.nav{
+    display: flex;  
+    margin-right: 50px;
+}
+
+.nav li{
+    list-style: none;
+    margin: 0 20px;
+}
+
+.nav li a{
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 300;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.5s;
+    padding: 10px;
+}
+
+.nav li a:hover{
+    color: var(--primary);
+}
+
+/* nav mobile */
+.nav-mobile{
+    position: absolute;
+    top: 0;left: 0;width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter:blur(20px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    z-index: 990;
+    gap: 20px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.nav-mobile.active{
+    opacity: 1;
+    visibility: visible;
+}
+
+.nav-mobile li{
+    position: relative;
+    list-style: none;
+}
+
+.nav-mobile li a{
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.5s;
+    padding: 10px;
+}
+
+.nav-mobile li a:hover{
+    color: var(--primary);
+}
+/* END-HEADER */
+
+
+/* Banner */
+
+.banner{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 0 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+    transition: 0.5s;
+    perspective: 1000px;
+}
+
+.banner::after{
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+        rgba(0,0,0,0.2),
+        rgba(0,0,0,0.4),
+        rgba(0,0,0,0.7),
+        rgba(0,0,0,0.9)
+    );
+}
+
+.banner .share{
+    position: absolute;
+    top: 45%;
+    left: 50px;
+    transform: translateY(-50%);
+    color: #ffffff;
+    font-size: 1.5rem;
+    z-index: 1000;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.banner .share:hover{
+    color: var(--primary);
+}
+
+.banner .share::before{
+    position: absolute;
+    content: '';
+    top: 40px;
+    left: 50%;
+    width: 2px;
+    height: 100px;
+    background: #ffffff;
+}
+
+
+
+/* Triangle */
+
+.triangle{
+    position: absolute;
+    content: '';
+    top: 10vh;
+    left: 10vh;
+    width: 30vh;
+    height: 30vh;
+    clip-path: polygon(50% 18%, 0% 100%, 100% 100%);
+    cursor: pointer;
+    z-index: 900;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    background-color: #ffffff;
+}
+
+.triangle-inverse{
+    position: absolute;
+    content: '';
+    top: 10vh;
+    left: calc(25vh + 5vh);
+    width: 30vh;
+    height: 30vh;
+    clip-path: polygon(50% 100%, 0 18%, 100% 18%);
+    cursor: pointer;
+    z-index: 900;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    background-color: #ffffff;
+}
+
+.triangle.two{
+    position: absolute;
+    content: '';
+    top: 10vh;
+    left: 50vh;
+    width: 30vh;
+    height: 30vh;
+    clip-path: polygon(50% 18%, 0% 100%, 100% 100%);
+    cursor: pointer;
+    z-index: 900;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    background-color: #ffffff;
+}
+
+.triangle.three{
+    position: absolute;
+    content: '';
+    top: 40vh;
+    left: 30vh;
+    width: 30vh;
+    height: 30vh;
+    clip-path: polygon(50% 18%, 0% 100%, 100% 100%);
+    cursor: pointer;
+    z-index: 900;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    background-color: #ffffff;
+}
+
+.triangle-inverse.two{
+    position: absolute;
+    content: '';
+    top: 40vh;
+    left: 10vh;
+    width: 30vh;
+    height: 30vh;
+    clip-path: polygon(50% 100%, 0 18%, 100% 18%);
+    cursor: pointer;
+    z-index: 900;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    background-color: #ffffff;
+}
+
+.triangle-inverse.three{
+    position: absolute;
+    content: '';
+    top: 40vh;
+    left: 50vh;
+    width: 30vh;
+    height: 30vh;
+    clip-path: polygon(50% 100%, 0 18%, 100% 18%);
+    cursor: pointer;
+    z-index: 900;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    background-color: #ffffff;
+}
+
+.triangle-inverse img,
+.triangle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* 3d effect flip */
+.triangle:hover,
+.triangle-inverse:hover{
+    transform: rotateY(360deg);
+}
+
+.flip-card{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+}
+
+.triangle:hover .flip-card,
+.triangle-inverse:hover .flip-card{
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flip-card-front{
+    color: #000000;
+}
+
+.flip-card-back{
+    background: var(--primary);
+    color: #000000;
+    transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 50px;
+}
+
+.flip-card-back .play{
+    font-size: 3rem;
+    color: #000000;
+    transition: 0.5s;
+    transform: scale(1);
+}
+
+.flip-card-back .play:hover{
+    transform: scale(1.5);
+}
+
+.triangle-inverse .flip-card-back{
+    padding-top: 150px;
+}
+
+
+.triangle img,
+.triangle-inverse img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
